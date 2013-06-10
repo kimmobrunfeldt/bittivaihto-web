@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}500 Internal server error{% endblock %}
+
+{% block content %}
+    <h1>500 Internal server error</h1>
+
+    <div class="alert alert-block alert-error">
+        <strong>Oh snap!</strong>
+        Something went terribly wrong. We have been notified about the problem, and we will try to fix it as soon as possible. In the mean time, you may try the following:
+        <ul>
+            <li>Try reloading the page. The problem may be temporary.</li>
+            <li>If you entered the page address in by hand, check that it is correct.</li>
+        </ul>
+    </div>
+{% endblock content %}
