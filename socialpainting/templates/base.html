@@ -30,16 +30,17 @@
     </div>
   </header>
 
-  <div class="content">
-    <div class="container">
-      {% include "_messages.html" %}
-      {% block content %}{% endblock %}
-    </div>
+  <div class="container content">
+    {% include "_messages.html" %}
+    {% block content %}
+    {% endblock %}
+    <footer>
+      <div class="container">
+        <p>Kiraff is making this historical piece possible.</p>
+        <p>© 2013 Kiraff</p>
+      </div>
+    </footer>
   </div>
-
-  <footer>
-    <div class="container"></div>
-  </footer>
 
   {% block scripts %}
     {% assets 'all-js' -%}

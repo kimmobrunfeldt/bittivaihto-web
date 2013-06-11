@@ -1,9 +1,22 @@
 @import "bootstrap/bootstrap.less";
 
 .content {
-    margin-top: @navbarHeight + @baseLineHeight;
+  margin-top: @navbarHeight + @baseLineHeight;
 }
 
 .hero-unit {
-    text-align: center;
+  text-align: center;
+  .lead {
+    margin-top: 2*@baseLineHeight;
+  }
+}
+
+footer {
+  margin-top: 2*@baseLineHeight;
+  padding: @baseLineHeight 0;
+  border-top: 1px solid @grayLighter;
+  text-align: center;
+  p {
+    color: @grayLight;
+  }
 }
