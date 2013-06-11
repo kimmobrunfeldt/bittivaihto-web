@@ -22,14 +22,8 @@
   <script src="{{ url_for('static', filename='javascripts/vendor/modernizr.js') }}"></script>
 </head>
 <body>
-  <header class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        {% block site_brand %}<a class="brand" href="#">Site Name</a>{% endblock %}
-      </div>
-    </div>
-  </header>
-
+  {% block painting %}
+  {% endblock %}
   <div class="container content">
     {% include "_messages.html" %}
     {% block content %}

@@ -1,14 +1,15 @@
 @import "bootstrap/bootstrap.less";
 
+body {
+  background: url('../images/dust.png');
+}
+
 .content {
   margin-top: @navbarHeight + @baseLineHeight;
 }
 
-.hero-unit {
-  text-align: center;
-  .lead {
-    margin-top: 2*@baseLineHeight;
-  }
+.content {
+  margin-top: @navbarHeight + @baseLineHeight;
 }
 
 footer {
@@ -23,4 +24,27 @@ footer {
 
 .row-fluid + .row-fluid {
   margin-top: @baseLineHeight;
+}
+
+.texture-layer {
+  background: url('../images/egg_shell.png');
+  text-align: center;
+  .lead {
+    margin-top: 2*@baseLineHeight;
+  }
+  border-bottom: solid 2px @grayLight;
+}
+
+.radial-layer {
+  padding: @navbarHeight 0;
+  background: url('../images/lights.svg') no-repeat;
+  background-size: cover;
+}
+
+.img-painting {
+  padding: 6px;
+  background-color: #000;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(1,1,1,.2);
+  box-shadow: 5px 8px 15px #333, -5px 3px 20px #777;
 }

@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 
-{% block content %}
-<div class="hero-unit">
-  <p>
-    <img src="http://www.cuded.com/wp-content/uploads/2012/04/Fran%C3%A7oise-Nielly-2.jpg" class="img-polaroid">
-  </p>
-  <p class="lead">This is what a $1 000 000 painting looks like.</p>
+{% block painting %}
+<div class="texture-layer">
+  <div class="radial-layer">
+    <p>
+      <img src="http://www.cuded.com/wp-content/uploads/2012/04/Fran%C3%A7oise-Nielly-2.jpg" class="img-painting">
+    </p>
+    <p class="lead">This is what a $1 000 000 painting looks like.</p>
+  </div>
 </div>
+{% endblock %}
+
+{% block content %}
 <div class="row-fluid">
   <div class="span4">
     <h2>What's this?</h2>
