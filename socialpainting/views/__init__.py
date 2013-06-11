@@ -9,4 +9,4 @@ pages = Blueprint('pages', __name__, url_prefix='')
 
 @pages.route('/')
 def home():
-    return render_template('base.html')
+    return render_template('home.html')
