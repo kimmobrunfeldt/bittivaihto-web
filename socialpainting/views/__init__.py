@@ -10,3 +10,8 @@ pages = Blueprint('pages', __name__, url_prefix='')
 @pages.route('/')
 def home():
     return render_template('home.html')
+
+
+@pages.route('/contributions')
+def catalogue():
+    return render_template('catalogue.html')
