@@ -23,3 +23,13 @@ SECRET_KEY = 'development key'
 # the integrated server will automatically reload the application if changes in
 # the code are detected.
 DEBUG = True
+
+#
+# Database
+# -------
+
+SQLALCHEMY_DATABASE_URI = os.environ.get(
+    'DATABASE_URL',
+    'postgres://localhost/socialpainting'
+)
+SQLALCHEMY_ECHO = False
