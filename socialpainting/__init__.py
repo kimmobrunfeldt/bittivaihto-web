@@ -17,6 +17,9 @@ from .assets import assets
 from .extensions import db, sentry
 from .auth.models import User, Role
 
+# Todo: remove this import after models are imported elsewhere
+from .models import Round, Layer
+
 
 class Application(Flask):
     def __init__(self, environment=None):
