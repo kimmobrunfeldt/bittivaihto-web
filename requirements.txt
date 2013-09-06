@@ -3,6 +3,7 @@ Flask-Assets==0.8
 Flask-DebugToolbar==0.8.0
 Flask-SQLAlchemy==0.16
 Flask-Script==0.5.1
+Flask-Security==1.6.9
 Flask-XUACompatible==0.1.0
 Jinja2==2.7.1
 SQLAlchemy==0.8.2
