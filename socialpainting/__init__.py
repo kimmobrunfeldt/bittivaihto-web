@@ -11,9 +11,11 @@ import os
 from flask import Flask, jsonify, render_template, request
 from flask.ext.debugtoolbar import DebugToolbarExtension
 from flask.ext.xuacompatible import XUACompatible
+from flask.ext.security import Security, SQLAlchemyUserDatastore
 
 from .assets import assets
 from .extensions import db, sentry
+from .auth.models import User, Role
 
 
 class Application(Flask):
@@ -55,6 +57,8 @@ class Application(Flask):
         db.init_app(self)
         DebugToolbarExtension(self)
         XUACompatible(self)
+        user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+        security = Security(self, user_datastore)
 
         # Initialize Raven only if SENTRY_DSN setting is defined.
         if self.config.get('SENTRY_DSN'):
