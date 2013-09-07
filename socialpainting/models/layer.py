@@ -44,7 +44,6 @@ class Layer(db.Model):
 
     round = db.relationship(
         'Round',
-        primaryjoin='round_id == round.id',
         backref=backref(
             'layers',
             cascade='all, delete-orphan',

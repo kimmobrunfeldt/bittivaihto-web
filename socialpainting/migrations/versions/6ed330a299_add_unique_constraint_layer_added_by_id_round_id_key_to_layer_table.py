@@ -1,14 +1,14 @@
 """Add unique constraint `layer_added_by_id_round_id_key` to `layer` table.
 
 Revision ID: 6ed330a299
-Revises: 4e8f532c1a26
+Revises: 54190942dc21
 Create Date: 2013-09-07 11:43:05.532779
 
 """
 
 # revision identifiers, used by Alembic.
 revision = '6ed330a299'
-down_revision = '4e8f532c1a26'
+down_revision = '54190942dc21'
 
 from alembic import op
 
