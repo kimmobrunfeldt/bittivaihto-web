@@ -10,6 +10,13 @@ from ..auth.models import User
 class Layer(db.Model):
     __tablename__ = 'layer'
 
+    #: NOTICE: in psql unique constraints don't prevent multiple NULL values,
+    #: hence it is possible to have multiple layers where for example
+    #: added_by_id=NULL and round_id=1
+    __table_args__ = (
+        db.UniqueConstraint('added_by_id', 'round_id'),
+    )
+
     id = db.Column(db.Integer, primary_key=True)
 
     added_by_id = db.Column(
