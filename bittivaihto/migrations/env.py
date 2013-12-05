@@ -11,8 +11,8 @@ ROOT = os.path.abspath(
 )
 sys.path.append(ROOT)
 
-from socialpainting import Application
-from socialpainting.extensions import db
+from bittivaihto import Application
+from bittivaihto.extensions import db
 
 
 app = Application()

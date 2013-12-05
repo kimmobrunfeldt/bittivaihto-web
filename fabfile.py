@@ -2,7 +2,7 @@ import urlparse
 
 from fabric.api import env, local, require, settings
 
-from socialpainting.settings.development import SQLALCHEMY_DATABASE_URI
+from bittivaihto.settings.development import SQLALCHEMY_DATABASE_URI
 
 
 def staging():

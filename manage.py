@@ -5,8 +5,8 @@ import os
 from flask.ext.script import Manager, Server
 from flask.ext.assets import ManageAssets
 
-from socialpainting import Application, models
-from socialpainting.extensions import db
+from bittivaihto import Application, models
+from bittivaihto.extensions import db
 
 
 app = Application()

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    socialpainting.assets
+    bittivaihto.assets
     ~~~~~~~~~~~~~~~~~~~~~
 
     This module contains static asset definitions.

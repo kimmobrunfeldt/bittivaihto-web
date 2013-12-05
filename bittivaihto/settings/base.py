@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    socialpainting.settings.base
+    bittivaihto.settings.base
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     This module contains global application settings that are common to all

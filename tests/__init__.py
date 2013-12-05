@@ -1,7 +1,7 @@
 from flask import template_rendered
 
-from socialpainting import Application
-from socialpainting.extensions import db
+from bittivaihto import Application
+from bittivaihto.extensions import db
 
 
 class ContextVariableDoesNotExist(Exception):

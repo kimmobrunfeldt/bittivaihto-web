@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    socialpainting.settings.production
+    bittivaihto.settings.production
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     This module contains application settings specific to a production

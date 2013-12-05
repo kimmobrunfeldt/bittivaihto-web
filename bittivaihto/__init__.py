@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    socialpainting
+    bittivaihto
     ~~~~~~~~~~~~~~
 
     This module contains the Flask application core.
@@ -45,7 +45,7 @@ class Application(Flask):
         """
         if environment is None:
             environment = os.environ.get('FLASK_ENV', 'development')
-        settings_module = 'socialpainting.settings.' + environment
+        settings_module = 'bittivaihto.settings.' + environment
         self.config.from_object(settings_module)
 
     def _init_blueprints(self):

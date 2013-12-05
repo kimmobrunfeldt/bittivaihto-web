@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-    socialpainting.settings.development
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    bittivaihto.settings.test
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    This module contains application settings specific to a development
-    environment.
+    This module contains application settings specific to a automated tests.
 """
 
 from .base import *
@@ -12,6 +11,8 @@ from .base import *
 #
 # Generic
 # -------
+
+CSRF_ENABLED = False
 
 # If a secret key is set, cryptographic components can use this to sign cookies
 # and other things. Set this to a complex random value when you want to use the
@@ -24,12 +25,18 @@ SECRET_KEY = 'development key'
 # the code are detected.
 DEBUG = True
 
-#
-# Database
-# -------
+TESTING = True
 
-SQLALCHEMY_DATABASE_URI = os.environ.get(
-    'DATABASE_URL',
-    'postgres://localhost/socialpainting'
-)
-SQLALCHEMY_ECHO = False
+
+#
+# Flask-DebugToolbar
+# ------------------
+
+DEBUG_TB_ENABLED = False
+
+
+#
+# SQLAlchemy
+# ----------
+
+SQLALCHEMY_DATABASE_URI = 'postgres://postgres@localhost/bittivaihto_test'

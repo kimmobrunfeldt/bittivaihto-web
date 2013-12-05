@@ -1,6 +1,6 @@
 from flask.ext.security import UserMixin, RoleMixin
 
-from socialpainting.extensions import db
+from bittivaihto.extensions import db
 
 
 roles_users = db.Table(
