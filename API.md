@@ -11,7 +11,7 @@ in the API:
 * Cents(0.01€) are used instead of euros. For example 1€ would be 100.
 * Millibitcoins(mBTC 0.001BTC) are used instead of bitcoins.
 
-*Do not use floats, they will be cut off! All numbers used in money amounts are integers.*
+**Do not use floats, they will be cut off! All numbers used in money amounts are integers.**
 
 Definitions
 -----------
@@ -25,7 +25,7 @@ Buy
 Set buy order for a currency. Using this means you want to buy crypto currency
 with euros.
 
-POST <base-url>/buy
+    POST <base-url>/buy
 
 Options
 
@@ -56,7 +56,7 @@ Sell
 Set sell order for a currency. Using this means you want to sell crypto currency
 to get euros.
 
-POST <base-url>/sell
+    POST <base-url>/sell
 
 Options
 
@@ -92,7 +92,7 @@ Ticker
 Returns latest trade data about currency.
 Check [Bitstamp ticker](https://www.bitstamp.net/api/ticker/).
 
-GET <base-url>/ticker
+    GET <base-url>/ticker
 
 Options
 
