@@ -1,0 +1,15 @@
+
+
+
+
+
+
+Buy order
+
+- Submit time
+- How much to buy
+- What currency to buy
+- Maximum price
+- Maximum time for order
+- Return address if max time exceeded
+-
