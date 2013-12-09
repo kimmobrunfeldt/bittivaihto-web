@@ -1,0 +1,6 @@
+if [[ $FLASK_ENV == "production" ]]
+then
+  bin/start-nginx newrelic-admin run-program gunicorn --config=gunicorn.conf.py bittivaihto.wsgi:app
+else
+  python manage.py runserver
+fi

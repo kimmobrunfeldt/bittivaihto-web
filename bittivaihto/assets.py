@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-    bittivaihto.assets
-    ~~~~~~~~~~~~~~~~~~~~~
+    audi.assets
+    ~~~~~~~~~~~~
 
     This module contains static asset definitions.
 """
@@ -10,35 +10,31 @@ from flask.ext.assets import Bundle, Environment
 
 assets = Environment()
 
-less = Bundle(
-    'stylesheets/site.less',
-    debug=False,
-    depends=[
-        'stylesheets/**/*.css',
-        'stylesheets/**/*.less',
-    ],
-    filters='less',
-    output='stylesheets/less.css'
-)
 
 assets.register(
     'all-css',
-    less,
+    Bundle(
+        'stylesheets/site.less',
+        depends=[
+            'stylesheets/**/*.css',
+            'stylesheets/**/*.less',
+        ],
+        filters='less',
+        output='stylesheets/less.css'
+    ),
     filters='cssmin',
     output='stylesheets/all.css',
 )
 
-coffeescripts = Bundle(
-    'javascripts/site.coffee',
-    debug=False,
-    filters='coffeescript',
-    output='javascripts/coffee.js'
-)
 
 assets.register(
     'all-js',
     'javascripts/vendor/jquery/jquery.js',
-    coffeescripts,
+    Bundle(
+        'javascripts/site.coffee',
+        filters='coffeescript',
+        output='javascripts/site-coffee.js'
+    ),
     filters='uglifyjs',
-    output='javascripts/all.js',
+    output='javascripts/site.js',
 )

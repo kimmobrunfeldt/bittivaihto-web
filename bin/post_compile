@@ -1,0 +1,16 @@
+# Fail fast and fail hard.
+set -eo pipefail
+
+# Ensure that node is on $PATH.
+PATH="/app/vendor/node/bin/:$PATH"
+
+# Syntax sugar.
+source $BIN_DIR/utils
+
+# Build static assets with webassets.
+puts-step "Building static assets"
+python manage.py assets build 2>&1 | indent
+
+# Run database migrations.
+puts-step "Running database migrations"
+alembic upgrade head 2>&1 | indent
