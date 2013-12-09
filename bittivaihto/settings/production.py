@@ -33,6 +33,7 @@ except KeyError:
 # the integrated server will automatically reload the application if changes in
 # the code are detected.
 DEBUG = False
+SERVER_NAME = os.environ.get('SERVER_NAME')
 
 
 #

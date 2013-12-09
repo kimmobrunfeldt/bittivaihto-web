@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>{% block title %}Social Painting{% endblock %}</title>
+  <title>{% block title %}Bittivaihto.fi{% endblock %}</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -22,10 +22,7 @@
   <script src="{{ url_for('static', filename='javascripts/vendor/modernizr.js') }}"></script>
 </head>
 <body>
-  {% block painting %}
-  {% endblock %}
   <div class="container content">
-    {% include "_messages.html" %}
     {% block content %}
     {% endblock %}
     <footer>

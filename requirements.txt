@@ -3,14 +3,10 @@ Flask-Assets==0.8
 Flask-DebugToolbar==0.8.0
 Flask-SQLAlchemy==0.16
 Flask-Script==0.5.1
-Flask-Security==1.6.9
--e git+https://github.com/kvesteri/flask-storage.git@4bccb83f980e36eff8f9840187a6b3824675ad08#egg=Flask_Storage-dev
-Flask-XUACompatible==0.1.0
 Jinja2==2.7.1
 SQLAlchemy==0.8.2
 SQLAlchemy-Defaults==0.2.2
 SQLAlchemy-Utils==0.16.9
-WTForms==1.0.4
 Werkzeug==0.9.4
 alembic==0.6.0
 blinker==1.3

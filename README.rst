@@ -1,5 +1,5 @@
-{{ project_name|title }}
-{{ '=' * project_name|length }}
+bittivaihto
+===========
 
 Requirements
 ------------
@@ -21,12 +21,12 @@ Follow the instructions below to set up the development environment.
 
 1. Create a virtualenv::
 
-    $ mkvirtualenv {{ project_name }}
+    $ mkvirtualenv bittivaihto
 
 2. Make the virtualenv activate automagically when traversing inside the
    project directory:
 
-    $ echo -e "workon {{ project_name }}\n" > .env
+    $ echo -e "workon bittivaihto\n" > .env
 
 3. Install Python dependencies::
 
@@ -38,8 +38,8 @@ Follow the instructions below to set up the development environment.
 
 5. Create database for development and testing::
 
-    $ createdb {{ project_name }}
-    $ createdb {{ project_name }}_test
+    $ createdb bittivaihto
+    $ createdb bittivaihto_test
 
 6. Create database tables::
 
@@ -85,7 +85,7 @@ project.
 
 1. Create a new Heroku application.::
 
-    $ heroku apps:create {{ project_name }} \
+    $ heroku apps:create bittivaihto \
         --buildpack https://github.com/fastmonkeys/heroku-buildpack-flask.git \
         --remote production
 

@@ -10,14 +10,9 @@ import os
 
 from flask import Flask, jsonify, render_template, request
 from flask.ext.debugtoolbar import DebugToolbarExtension
-from flask.ext.xuacompatible import XUACompatible
-from flask.ext.security import Security
 
 from .assets import assets
-from .extensions import db, sentry, user_datastore
-
-# Todo: remove this import after models are imported elsewhere
-from .models import Round, Layer
+from .extensions import db, sentry
 
 
 class Application(Flask):
@@ -49,17 +44,13 @@ class Application(Flask):
         self.config.from_object(settings_module)
 
     def _init_blueprints(self):
-        from .views import pages
-
-        self.register_blueprint(pages)
+        pass
 
     def _init_extensions(self):
         """Initialize and configure Flask extensions with this application."""
         assets.init_app(self)
         db.init_app(self)
         DebugToolbarExtension(self)
-        XUACompatible(self)
-        Security(self, user_datastore)
 
         # Initialize Raven only if SENTRY_DSN setting is defined.
         if self.config.get('SENTRY_DSN'):
