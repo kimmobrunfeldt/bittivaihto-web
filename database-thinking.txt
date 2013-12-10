@@ -4,17 +4,25 @@ Sell order
 
 Required fields:
 
-time:            Submit time (UTC unix timestamp)
-name:            Name of the seller
-email:           Email address of the seller
-sell_amount:     How much bitcoins to sell(in millibitcoins)
-currency:        What currency to sell (fixed values like BTC, LTC(is number best?))
-account:         Seller's bank account in IBAN format
-deposit_address: Address where user deposits their bitcoins(this must be generated in our backend), example format: 31uEbMgunupShBVTewXjtqbBv5MndwfXhb
+ordered_at:         Submit time (UTC unix timestamp)
+name:               Name of the seller
+email:              Email address of the seller
+sell_amount:        How much bitcoins to sell(in millibitcoins)
+currency:           What currency to sell (fixed values like BTC,
+                    LTC(is number best?))
+bank_account:       Seller's bank account in IBAN format
+deposit_address:    Address where user deposits their bitcoins(this must be
+                    generated in our backend), example format:
+                    31uEbMgunupShBVTewXjtqbBv5MndwfXhb
+
 
 Optional:
-minimum_price:   Minimum price (in euro cents)
+
+minimum_price:      Minimum price (in euro cents)
+
 
 Required if minimum_price is set:
-maximum_time:    Maximum time for order (in seconds)
-return_address:  Return address if max time exceeded (bitcoin address) example format: 31uEbMgunupShBVTewXjtqbBv5MndwfXhb
+
+maximum_time:       Maximum time for order (in seconds)
+return_address:     Return address if max time exceeded (bitcoin address)
+                    example format: 31uEbMgunupShBVTewXjtqbBv5MndwfXhb
