@@ -1,7 +1,10 @@
 -r requirements.txt
+# This fork removes Flask-Login dependency
+-e git+https://github.com/vesauimonen/flask-test.git@05c6c5d03ebb06ffab65877daad000b22ba40560#egg=flask-test-dev
 cov-core==1.7
 coverage==3.6b1
 fabric==1.7.0
+factory_boy==2.0.2
 flexmock==0.9.7
 pep8==1.4.6
 py==1.4.12
