@@ -14,6 +14,10 @@ from flask.ext.debugtoolbar import DebugToolbarExtension
 from .assets import assets
 from .extensions import db, sentry
 
+# Imported here for migrations and testing
+# Todo: remove import when imported elsewhere
+from bittivaihto.models import SellOrder
+
 
 class Application(Flask):
     def __init__(self, environment=None):
