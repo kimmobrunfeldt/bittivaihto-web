@@ -1,5 +1,5 @@
-from summaries import Application
-from summaries.extensions import db
+from bittivaihto import Application
+from bittivaihto.extensions import db
 
 
 def pytest_configure(config):
