@@ -10,6 +10,13 @@ class SellOrder(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
 
+    # Possible values:
+    # u'pending' - Waiting for customer to deposit and that 3 confirmations are
+    #              received
+    #
+    # u'transfering' - Transfering bitcoins from bittivaihto to market
+    # u'selling' - Selling bitcoins in market
+    # u'paying' - In process of paying the amount to customer
     status = db.Column(
         db.Unicode(255),
         nullable=False,
@@ -49,6 +56,15 @@ class SellOrder(db.Model):
         default=u'BTC',
         server_default=u'BTC'
     )
+
+    """This should be added
+    market = db.Column(
+        db.Unicode(40),
+        nullable=False,
+        default=u'bitstamp',
+        server_default=u'bitstamp'
+    )
+    """
 
     deposit_address = db.Column(
         db.Unicode(255),
