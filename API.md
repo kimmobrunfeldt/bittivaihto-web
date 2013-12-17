@@ -9,7 +9,7 @@ Because of floating point rounding issues, smaller currency units are used
 in the API:
 
 * Cents(0.01€) are used instead of euros. For example 1€ would be 100.
-* Millibitcoins(mBTC 0.001BTC) are used instead of bitcoins.
+* Satoshis(0.00000001 BTC) are used instead of bitcoins.
 
 **Do not use floats, they will be cut off! All numbers used in money amounts are integers.**
 
@@ -17,7 +17,7 @@ Definitions
 -----------
 
 * Euro cent = 0.01 €
-* mBTC = 0.001 BTC
+* satoshi = 0.00000001 BTC
 
 Buy
 ---
