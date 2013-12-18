@@ -58,15 +58,6 @@ class SellOrder(db.Model):
         server_default=u'BTC'
     )
 
-    """This should be added
-    market = db.Column(
-        db.Unicode(40),
-        nullable=False,
-        default=u'bitstamp',
-        server_default=u'bitstamp'
-    )
-    """
-
     deposit_address = db.Column(
         db.Unicode(255),
         nullable=False
