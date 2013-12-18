@@ -50,7 +50,8 @@ class Application(Flask):
         self.config.from_object(settings_module)
 
     def _init_blueprints(self):
-        pass
+        from views import api
+        self.register_blueprint(api, url_prefix='/api/v1')
 
     def _google_verification(self):
         return 'google-site-verification: google78fada8781858043.html'
