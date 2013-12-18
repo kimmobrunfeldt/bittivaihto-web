@@ -11,9 +11,10 @@ class SellOrder(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
     # Possible values:
-    # u'pending' - Waiting for customer to deposit and that 3 confirmations are
+    # u'pending' - This is a new sell order. No email has been sent to the
+    #              customer
+    # u'waiting' - Waiting for customer to deposit and that 3 confirmations are
     #              received
-    #
     # u'transfering' - Transfering bitcoins from bittivaihto to market
     # u'selling' - Selling bitcoins in market
     # u'paying' - In process of paying the amount to customer
