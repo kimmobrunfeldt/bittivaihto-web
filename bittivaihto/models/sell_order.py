@@ -17,7 +17,9 @@ class SellOrder(db.Model):
     #              received
     # u'transfering' - Transfering bitcoins from bittivaihto to market
     # u'selling' - Selling bitcoins in market
+    # u'withdrawing' - In process of withdrawing from market to our bank account
     # u'paying' - In process of paying the amount to customer
+    # u'finished' - All done. Archieve.
     status = db.Column(
         db.Unicode(255),
         nullable=False,
