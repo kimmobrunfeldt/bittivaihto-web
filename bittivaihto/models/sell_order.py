@@ -49,7 +49,7 @@ class SellOrder(db.Model):
     )
 
     sell_amount = db.Column(
-        db.Integer,
+        db.Numeric,
         nullable=False
     )
 
@@ -66,7 +66,7 @@ class SellOrder(db.Model):
     )
 
     minimum_price = db.Column(
-        db.Integer,
+        db.Numeric,
         nullable=True
     )
 
