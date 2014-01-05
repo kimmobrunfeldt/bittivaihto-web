@@ -26,6 +26,8 @@ class Application(Flask):
         self._init_extensions()
         self._init_blueprints()
         self._init_errorhandlers()
+        self.route('/google78fada8781858043.html')(self._google_verification)
+
 
     def _init_settings(self, environment=None):
         """
@@ -49,6 +51,9 @@ class Application(Flask):
 
     def _init_blueprints(self):
         pass
+
+    def _google_verification(self):
+        return 'google-site-verification: google78fada8781858043.html'
 
     def _init_extensions(self):
         """Initialize and configure Flask extensions with this application."""
