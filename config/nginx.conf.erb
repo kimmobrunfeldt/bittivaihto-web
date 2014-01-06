@@ -117,8 +117,17 @@ http {
     send_timeout             5s;
 
     location /static {
-      alias <%= ENV["HOME"] %>/audi/static;
+      alias <%= ENV["HOME"] %>/bittivaihto/static;
     }
+
+    location /robots.txt {
+      alias <%= ENV["HOME"] %>/bittivaihto/static/robots.txt;
+    }
+
+    # Todo: uncomment this when we have a favicon
+    # location /favicon.ico {
+    #   alias <%= ENV["HOME"] %>/bittivaihto/static/favicon.ico;
+    # }
 
     location / {
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
