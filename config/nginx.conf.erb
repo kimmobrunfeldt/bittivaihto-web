@@ -87,6 +87,14 @@ http {
 
   server {
     listen <%= ENV["PORT"] %>;
+    server_name bittivaihto.fi;
+    # Redirect tulsu.fi to www.tulsu.fi, $scheme will get the http protocol
+    # and 301 is best practice for tablet, phone, desktop and seo
+    return 301 $scheme://www.bittivaihto.fi$request_uri;
+  }
+
+  server {
+    listen <%= ENV["PORT"] %>;
     server_name _;
 
     # Timeouts
