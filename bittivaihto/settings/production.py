@@ -51,6 +51,13 @@ SENTRY_DSN = os.environ.get('SENTRY_DSN')
 
 
 #
+# SeaSurf
+# -------
+
+CSRF_COOKIE_SECURE = True
+
+
+#
 # Webassets
 # ---------
 

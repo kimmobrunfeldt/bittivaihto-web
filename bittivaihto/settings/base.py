@@ -64,3 +64,8 @@ LESS_BIN = os.path.join(NODE_MODULES_BIN, 'lessc')
 
 # Path to the UglifyJS binary
 UGLIFYJS_BIN = os.path.join(NODE_MODULES_BIN, 'uglifyjs')
+
+#
+# Webassets
+# ---------
+CSRF_ENABLED = False

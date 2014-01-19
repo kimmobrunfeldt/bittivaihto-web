@@ -12,7 +12,7 @@ from flask import Flask, jsonify, render_template, request
 from flask.ext.debugtoolbar import DebugToolbarExtension
 
 from .assets import assets
-from .extensions import db, sentry
+from .extensions import csrf, db, sentry
 
 # Imported here for migrations and testing
 # Todo: remove import when imported elsewhere
@@ -27,7 +27,6 @@ class Application(Flask):
         self._init_blueprints()
         self._init_errorhandlers()
         self.route('/google78fada8781858043.html')(self._google_verification)
-
 
     def _init_settings(self, environment=None):
         """
@@ -60,6 +59,7 @@ class Application(Flask):
         """Initialize and configure Flask extensions with this application."""
         assets.init_app(self)
         db.init_app(self)
+        csrf.init_app(self)
         DebugToolbarExtension(self)
 
         # Initialize Raven only if SENTRY_DSN setting is defined.
