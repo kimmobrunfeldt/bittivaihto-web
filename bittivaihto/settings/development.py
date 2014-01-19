@@ -30,6 +30,6 @@ DEBUG = True
 
 SQLALCHEMY_DATABASE_URI = os.environ.get(
     'DATABASE_URL',
-    'postgres://localhost/bittivaihto'
+    'postgres://localhost/bittivaihto_web'
 )
 SQLALCHEMY_ECHO = False

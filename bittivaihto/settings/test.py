@@ -39,6 +39,6 @@ DEBUG_TB_ENABLED = False
 # SQLAlchemy
 # ----------
 
-SQLALCHEMY_DATABASE_URI = 'postgres://postgres@localhost/bittivaihto_test'
+SQLALCHEMY_DATABASE_URI = 'postgres://postgres@localhost/bittivaihto_web_test'
 
 SERVER_NAME = 'localhost'
