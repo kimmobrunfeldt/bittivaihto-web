@@ -77,9 +77,6 @@ class TestSellOrderColumnRestrictions(BaseTestCase):
     def test_bank_account_is_required(self):
         self.assert_required_attr('bank_account')
 
-    def test_deposit_address_is_required(self):
-        self.assert_required_attr('deposit_address')
-
     def test_ordered_at_defaults_to_a_datetime(self):
         assert isinstance(
             SellOrderFactory(ordered_at=None).ordered_at,
