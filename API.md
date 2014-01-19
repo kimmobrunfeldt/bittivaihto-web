@@ -73,6 +73,34 @@ Options
                     this address if order isn't filled in `maximum_time`.
 
 
+Validations:
+
+    name: String. Length: 4-100. Must contain first and last name
+    email: String. Max length 254. Validation is done by sending mail. But lightweight
+           front-end validation is still needed.
+    bank_account: String. Must be Finnish account. Finnish IBAN is 18 characters.
+                  http://fi.wikipedia.org/wiki/IBAN
+                  Validate: http://tarkistusmerkit.teppovuori.fi/tarkmerk.htm#iban
+    currency: String. Must be in ['btc']
+    sell_amount: Decimal.
+                 Test if precision is too high: Max length after decimal point is 8.
+                 Must be >= 0.02
+
+    --- Following arguments are optional, check the dependencies from above ---
+
+    minimum_price: Decimal. Test if precision is too high: max length after decimal point is 2.
+                   0 < minimum_price < btc_price * 3
+                   btc_price * 3 tries to limit people from doing "impossible"
+                   sells. All sells that are not likely to be done might cause
+                   a return. That is costly to us because of bitcoin transaction
+                   fees and should be avoided.
+                   Setting 0 means the same as minimum_price is None
+    maximum_time: Integer. 3600 * 4 < maximum_time < 3600 * 24 * 60
+                  From 4 hours to 60 days
+    return_address: String. Bitcoinaddress. http://rosettacode.org/wiki/Bitcoin/address_validation
+                    Note: bitcoinaddress length may vary!
+                    http://bitcoin.stackexchange.com/questions/2564/how-to-validate-a-bitcoin-address-is-a-real-one
+
 Example
 
     curl --data " \
