@@ -62,7 +62,14 @@ class SellOrder(db.Model):
 
     deposit_address = db.Column(
         db.Unicode(255),
-        nullable=False
+        nullable=True,
+        unique=True
+    )
+
+    received_amount = db.Column(
+        db.Numeric,
+        default='0.0',
+        server_default='0.0'
     )
 
     minimum_price = db.Column(
