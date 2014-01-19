@@ -60,7 +60,7 @@ to get euros.
 Options
 
     name: Name of seller.
-    mail: Mail address of seller.
+    email: Mail address of seller.
     account: Bank account of seller.
     currency: The currency wanted to sell. Allowed values: btc
     amount: Amount of currency wanted to sell. Set as a string, e.g. "1.1"
