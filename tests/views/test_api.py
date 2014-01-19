@@ -1,28 +1,28 @@
 # -*- coding: utf-8 -*-
 import json
+from decimal import Decimal
 
 from flask import url_for
 
 from bittivaihto.models import SellOrder
-from bittivaihto.serializers import SellOrderSerializer
 
 from tests import ViewTestCase
 
 
 valid_request_data = {
-    'username': u'username',
-    'first_name': u'John',
-    'last_name': u'Doe',
+    'name': u'John Doe',
     'email': u'john.doe@email.com',
-    'password': u'secret-password'
+    'bank_account': u'CH93 0076 2011 6238 5295 7',
+    'currency': u'btc',
+    'sell_amount': '1.1'
 }
 
 invalid_request_data = {
-    'username': u'username',
-    'first_name': u'John',
-    'last_name': u'Doe',
-    'email': u'john.doe@email.com',
-    'password': u'secret-password'
+    'name': u'John Doe',
+    'email': u'john.doe@.com',
+    'bank_account': u'CH93 0076 2011 6238 5295 7',
+    'currency': u'btc',
+    'sell_amount': 'amount'
 }
 
 
@@ -40,31 +40,37 @@ class TestValidSellOrderPOST(ViewTestCase):
     def test_post_creates_a_sell_order(self):
         assert SellOrder.query.count() > 0
 
-    def test_post_returns_json_serialized_sell_order(self):
-        sell_order = SellOrder.query.first()
-        assert self.response.data == SellOrderSerializer(sell_order).json
+    def test_post_returns_created(self):
+        assert self.response.data == u'Created'
 
     def test_created_sell_order_contains_right_data(self):
-        pass
+        sell_order = SellOrder.query.first()
+        assert sell_order.name == u'John Doe'
+        assert sell_order.email == u'john.doe@email.com'
+        assert sell_order.bank_account == u'CH93 0076 2011 6238 5295 7'
+        assert sell_order.currency == u'btc'
+        assert sell_order.sell_amount == Decimal('1.1')
 
 
 class TestInvalidUsersPOST(ViewTestCase):
     def test_no_data_returns_400(self):
-        self.response = self.client.post(
+        response = self.client.post(
             url_for('api.create_sell_order')
         )
-        assert self.response.status_code == 400
+        assert response.status_code == 400
 
     def test_invalid_data_returns_400(self):
-        self.response = self.client.post(
+        response = self.client.post(
             url_for('api.create_sell_order'),
             data=json.dumps(invalid_request_data)
         )
-        assert self.response.status_code == 400
+        assert response.status_code == 400
 
     def test_invalid_data_returns_errors(self):
-        self.response = self.client.post(
+        response = self.client.post(
             url_for('api.create_sell_order'),
             data=json.dumps(invalid_request_data)
         )
-        pass
+        errors = json.loads(response.data)
+        assert u'email' in errors
+        assert u'sell_amount' in errors

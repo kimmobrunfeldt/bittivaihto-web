@@ -5,7 +5,6 @@ from flask import Blueprint, request
 from bittivaihto.extensions import db
 from bittivaihto.forms import SellOrderForm
 from bittivaihto.models import SellOrder
-from bittivaihto.serializers import SellOrderSerializer
 
 api = Blueprint('api', __name__)
 
@@ -22,10 +21,7 @@ def create_sell_order():
 
     sell_order = SellOrder()
     form.populate_obj(sell_order)
-    # Todo remove?
-    sell_order.deposit_address = u'<DUMMY_BITCOIN_ADDR>'
     db.session.add(sell_order)
     db.session.commit()
-    print sell_order.deposit_address
-
-    return SellOrderSerializer(sell_order).json, 201
+    # Todo: return serialized sell_order
+    return u'Created', 201
