@@ -61,16 +61,16 @@ Options
 
     name: Name of seller.
     email: Mail address of seller.
-    account: Bank account of seller.
+    bank_account: Bank account of seller.
     currency: The currency wanted to sell. Allowed values: btc
-    amount: Amount of currency wanted to sell. Set as a string, e.g. "1.1"
-    min_price: Optional. Minimum price in euros for the currency to
+    sell_amount: Amount of currency wanted to sell. Set as a string, e.g. "1.1"
+    minimum_price: Optional. Minimum price in euros for the currency to
                be sold.
-    expiration_time: Mandatory if `min_price` is set. If the buy order isn't
+    maximum_time: Mandatory if `minimum_price` is set. If the buy order isn't
                      filled in this time, money will be returned to
                      `return_address`. Value is in seconds.
-    return_address: Mandatory if `min_price` is set. Money will be returned to
-                    this address if order isn't filled in `expiration_time`.
+    return_address: Mandatory if `minimum_price` is set. Money will be returned to
+                    this address if order isn't filled in `maximum_time`.
 
 
 Example
